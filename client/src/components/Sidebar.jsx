@@ -38,13 +38,12 @@ const useStyles = makeStyles((theme) => ({
   },
  }));
 
-//need to set children because notifications will be inside Sidebar
+
 const Sidebar = ({ children }) => {
   //getting data from contexts
   const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } = useContext(SocketContext);
 
-  //setting states
-  const [idToCall, setIdToCall ] = useState(''); //in text field, passing id of the person you want to call
+  const [idToCall, setIdToCall ] = useState('');
 
   const classes = useStyles();
 
