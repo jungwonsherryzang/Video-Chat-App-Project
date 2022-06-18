@@ -1,0 +1,30 @@
+import React, { useContext } from 'react';
+import { Button } from '@material-ui/core';
+
+import { SocketContext } from '../SocketContext';
+
+const Notifications = () => {
+
+  const { answerCall, call, callAccepted } = useContext(SocketContext);
+  //call: all the information about the call
+  //callAccepted: (boolean) whether the call has been accepted
+
+  return (
+    //check if we have a receiving call
+    <>
+
+      {//if we have a receiving call and call has not yet been accepted
+      call.isReceivedCall && !callAccepted && (
+        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+          <h1>{call.name} is calling: </h1>
+          <Button variant="contained" color="primary" onClick={answerCall}>
+            Answer
+          </Button>
+        </div>
+      )}
+
+    </>
+  );
+};
+export default Notifications;
+
