@@ -1,9 +1,9 @@
 //To creating the video iframe and put all stream that we already got into it
 import React, { useContext } from 'react';
-import { Grid, Typography, Paper } from '@material-ui/core'; //grid for layout, typography for any kind of text elements, paper for div with a white background
+import { Grid, Typography, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-//will use Contexts that we already defined
+//will use Contexts
 import { SocketContext } from '../SocketContext.js';
 
 const useStyles = makeStyles((theme) => ({
@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   
-  //specifying how the grid looks like
+
   gridContainer: { 
     justifyContent: 'center', //center in desktop devices
     
@@ -36,8 +36,6 @@ const VideoPlayer = () => {
 
   //to get all data from context 
   const { name, callAccepted, myVideo, userVideo, callEnded, stream, call } = useContext(SocketContext); 
-  //how to get all data from our context
-  //will make pass all variables in SocketContext.Provider(in the bottom)
 
   return (
       <Grid container className={classes.gridContainer}>
