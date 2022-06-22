@@ -1,6 +1,6 @@
 import React from 'react';
-import { Typography, AppBar } from '@material-ui/core'; 
-import { makeStyles } from '@material-ui/core/styles'; 
+import { Typography, AppBar } from '@material-ui/core'; //component
+import { makeStyles } from '@material-ui/core/styles'; //just doing styling
 
 import VideoPlayer from './components/VideoPlayer';
 import Sidebar from './components/Sidebar';
@@ -44,7 +44,7 @@ const App = () => {
 
         {/* Options -> (including)Notifications Components*/}
         <Sidebar>
-            <Notifications /> 
+            <Notifications /> {/* notifications should be in inside of Options, so need to set children in Options*/}
         </Sidebar>
     </div>
   )
